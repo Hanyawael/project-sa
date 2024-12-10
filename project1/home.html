@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="home.css">
+  <title>Pharmacy</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+<nav class="menu">
+  <i class="fa-solid fa-prescription-bottle-medical"> Pill X </i>
+
+  <ul>
+    <li class="dropdown">
+      <a href="#" id="categoriesLink">
+        <span class="menu-icon"></span> products
+      </a>
+      <ul id="dropdownMenu">
+        <li><a href="index3.html">Category 1</a></li>
+        <li><a href="index (1).html">Category 2</a></li>
+      </ul>
+    </li>
+    <li><a href="index2.html">Cart</a></li>
+    <li><a href="index.html">Track order</a></li>
+    <li><a href="settings.html">Account Settings</a></li>
+    <li><a href="try.html">Contact us</a></li>
+    <li><a href="Login.html">Log out</a></li>
+
+  </ul>
+</nav>
+
+
+<div class="heroSection2">
+  <section class="hero1">
+    <div class="hero-content">
+      <h1 style="color: #536773">Your trusted pharmacy</h1>
+      <br>
+      <p>Get the best healthcare products delivered to your door.</p>
+        <p>Shop medications, supplements, and personal care items today.</p>
+      <br> <br> <br>
+      <button class="button">
+        <a href="index3.html" class="button2"> Shop Now </a>
+      </button>
+
+    </div>
+    <div class="hero-image">
+    </div>
+  </section>
+</div>
+
+<div class="heroSection3">
+  <section class="hero2">
+
+    <div class="icon-container">
+      <i class="fa-solid fa-cart-shopping ">
+        <a href=""> cart</a>
+      </i>
+      <i class="fa-solid fa-pills ">
+        <a href=""> medications </a>
+      </i>
+      <i class="fa-solid fa-spa">
+        <a href="">Health and Wellness </a>
+      </i>
+      <i class="fa-solid fa-user-doctor"><a href="">
+        ask pharmacist
+      </a>
+      </i>
+      <i class="fa-solid fa-user ">
+        <a href=""> profile</a>
+      </i>
+
+    </div>
+
+  </section>
+</div>
+<div class="heroSection5">
+  <section class="hero5">
+    <div class="hero5-content">
+      <div class="hero5-image">
+      </div>
+      <h1 style="color: #78B8B5">CHAT with an expert</h1>
+ <br> <br> <br> <br>
+      <button class="cta2">
+        <a href="try.html">
+      
+        <span>start now</span>
+        </a>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+    </div>
+
+  </section>
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">privacy policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">cat1</a></li>
+          <li><a href="#">cat2</a></li>
+          <li><a href="#">cat3</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+  // Toggle dropdown menu visibility
+  const categoriesLink = document.getElementById("categoriesLink");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+
+  categoriesLink.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent default link behavior
+    dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+  });
+
+  // Close dropdown if clicked outside
+  document.addEventListener("click", function (e) {
+    if (!categoriesLink.contains(e.target)) {
+      dropdownMenu.style.display = "none";
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const heroImage = document.querySelector('.hero-image');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          heroImage.classList.add('visible');
+        }
+      });
+    });
+
+    observer.observe(heroImage);
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const hero5Image = document.querySelector('.hero5-image');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          hero5Image.classList.add('visible');
+        }
+      });
+    });
+
+    observer.observe(hero5Image);
+  });
+
+</script>
+
+</body>
+</html>
+

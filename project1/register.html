@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmacy Registration</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(45deg, #071739, #2b4e77);
+      background-size: 200% 200%;
+      animation: gradientMove 10s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transform: translateY(-120px);
+      opacity: 0;
+      animation: slideIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-120px);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(20px);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .container h1 {
+      font-size: 24px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .container p {
+      font-size: 14px;
+      color: #7f8c8d;
+      margin-bottom: 20px;
+    }
+
+    .container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container input[type="text"],
+    .container input[type="email"],
+    .container input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .container input:focus {
+      border-color: #4b69f8;
+      outline: none;
+    }
+
+    .container .forgot-password {
+      font-size: 12px;
+      margin-bottom: 20px;
+      text-align: right;
+      width: 90%;
+    }
+
+    .container .forgot-password a {
+      color: #4b69f8;
+      text-decoration: none;
+    }
+
+    .container .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .container button {
+      width: 90%;
+      padding: 10px;
+      font-size: 16px;
+      color: white;
+      background: #4b69f8;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .container button:hover {
+      background: #3b5bd6;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #95a5a6;
+    }
+
+    .footer a {
+      color: #4b69f8;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Create Account</h1>
+    <p>Please fill in the details to register</p>
+    <form action="/register" method="POST">
+      <input type="text" id="name" name="name" placeholder="Full Name" required>
+      <input type="email" id="email" name="email" placeholder="Email Address" required>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+      <button type="submit">Register</button>
+    </form>
+    <div class="footer">
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </div>
+</body>
+</html>

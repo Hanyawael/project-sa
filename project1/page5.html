@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <link rel="stylesheet" href="try.css">
+    <link rel="icon" sizes="32x32" href="favicon.png">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const faqItems = document.querySelectorAll('.faq-question');
+
+            faqItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    
+                    // Toggle the visibility of the answer with smooth transition
+                    if (answer.style.display === "block") {
+                        answer.style.display = "none";
+                    } else {
+                        answer.style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<nav class="menu">
+    <ul>
+        <li class="dropdown">
+            <a href="index3.html" id="categoriesLink">
+                <span class="menu-icon"></span>  Products
+            </a>
+        </li>
+        <li><a href="index2.html">Cart</a></li>
+        <li><a href="settings.html">Account Settings</a></li>
+        <li><a href="index.html">track order</a></li>
+        <li><a href="try.html">Contact us</a></li>
+        <li><a href="Login.html">Log out</a></li>
+    </ul>
+</nav>
+<body class="body5">
+    <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is the return policy?</span>
+            </div>
+            <div class="faq-answer">
+                <p>Our return policy lasts 30 days. If 30 days have passed since your purchase, we cannot offer you a refund or exchange.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I track my order?</span>
+            </div>
+            <div class="faq-answer">
+                <p>You can track your order by entering your tracking number on the "Track Order" page or in your order confirmation email.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can I contact customer support?</span>
+            </div>
+            <div class="faq-answer">
+                <p>You can reach our customer support team via email at support@domain.com or by calling 123-456-7890.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What payment methods do you accept?</span>
+            </div>
+            <div class="faq-answer">
+                <p>We accept credit/debit cards, PayPal, and other online payment options.</p>
+            </div>
+        </div>
+    </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>online shop</h4>
+                <ul>
+                    <li><a href="#">cat1</a></li>
+                    <li><a href="#">cat2</a></li>
+                    <li><a href="#">cat3</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

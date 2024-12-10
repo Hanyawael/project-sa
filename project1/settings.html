@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmacy Settings</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #071739, #2b4e77);
+      background-size: 200% 200%;
+      animation: gradientMove 10s ease infinite;
+      color: #2c3e50;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: whitesmoke;
+      padding: 20px 0;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center; /* Center the navigation links */
+      align-items: center;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu li {
+      position: relative;
+    }
+
+    .menu a {
+      font-size: 18px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #3c4e68;
+      transition: color 0.3s;
+    }
+
+    .menu a:hover {
+      color: #4b69f8;
+    }
+
+    /* Settings Section */
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section label {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .toggle-section {
+      cursor: pointer;
+      color: #4b69f8;
+      text-decoration: underline;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .input-field input {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f7f7f7;
+    }
+
+    .save-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      color: white;
+      background: #4b69f8;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .save-btn:hover {
+      background: #3b5bd6;
+    }
+
+    .order-info {
+      font-size: 16px;
+      text-align: center; /* Center the Total Orders text */
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #071739, #2b4e77);
+  padding: 40px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-col {
+      width: 22%;
+      min-width: 200px; /* Adjusted for better responsiveness */
+      margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      color: #ffffff;
+      text-transform: capitalize;
+      margin-bottom: 35px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .footer-col h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: #dddddd;
+      height: 2px;
+      width: 50px;
+    }
+
+    /* Ensure the list items under each footer column have bullets and change their color to white */
+footer ul {
+  list-style-type: none; /* Remove the default bullets */
+  padding-left: 20px; /* Indentation for the bullet points */
+}
+
+footer ul li {
+  position: relative; /* Necessary to position the custom bullets */
+  margin-bottom: 10px; /* Adds space between each list item */
+}
+
+footer ul li::before {
+  content: '\2022'; /* Unicode character for the bullet (•) */
+  position: absolute;
+  left: -20px; /* Position the bullet outside the list item */
+  color: white; /* Change bullet color to white */
+  font-size: 20px; /* Adjust the size of the bullet */
+}
+
+footer ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+footer ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+    .footer-col ul li a:hover {
+      color: #ffffff;
+      padding-left: 8px;
+    }
+
+    .footer-col .social-links a {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: #1f2632;
+      margin: 0 10px 10px 0;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+      color: #24262b;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="menu">
+      <ul>
+        <li><a href="index3.html">Products</a></li>
+        <li><a href="index2.html">Cart</a></li>
+        
+        <li><a href="settings.html">Account Settings</a></li>
+        <li><a href="index.html">track order</a></li>
+        <li><a href="try.html">Contact Us</a></li>
+        <li><a href="Login.html">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Settings Section -->
+  <div class="container">
+    <h1>Account Settings</h1>
+    <form action="/update-settings" method="POST">
+      <div class="section">
+        <label>Username</label>
+        <p>HabibaHakki</p>
+        <div class="toggle-section" onclick="toggleSection('username-section')">Change Username</div>
+        <div id="username-section" class="hidden">
+          <input type="text" placeholder="New Username">
+        </div>
+      </div>
+
+      <div class="section">
+        <label>Email</label>
+        <p>HabibaHakki@example.com</p>
+        <div class="toggle-section" onclick="toggleSection('email-section')">Change Email</div>
+        <div id="email-section" class="hidden">
+          <input type="email" placeholder="New Email">
+        </div>
+      </div>
+
+      <div class="section">
+        <label>Password</label>
+        <div class="toggle-section" onclick="toggleSection('password-section')">Change Password</div>
+        <div id="password-section" class="hidden">
+          <input type="password" placeholder="New Password">
+          <input type="password" placeholder="Confirm New Password" style="margin-top: 10px;">
+        </div>
+      </div>
+
+      <div class="section">
+        <label>Card Details</label>
+        <div class="toggle-section" onclick="toggleSection('card-section')">Add Card Details</div>
+        <div id="card-section" class="hidden">
+          <input type="text" placeholder="Card Number">
+          <input type="text" placeholder="Expiration Date (MM/YY)" style="margin-top: 10px;">
+          <input type="text" placeholder="CVV" style="margin-top: 10px;">
+        </div>
+      </div>
+
+      <button class="save-btn">Save Changes</button>
+    </form>
+    <div class="order-info">Total Orders: <span>1</span></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">privacy policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">Scheduled Drugs</a></li>
+          <li><a href="#">(OTC) Drugs</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

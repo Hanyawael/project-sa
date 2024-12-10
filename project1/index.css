@@ -1,0 +1,205 @@
+
+
+
+/* index.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #071739;
+    color: #071739; /* Dark blue for text */
+    margin: 0;
+    padding: 20px;
+}
+
+
+h1 {
+    font-size: 1.8rem;
+    color: #071739; /* Primary color for headings */
+    margin-bottom: 20px;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration:underline;
+}
+
+  
+ /* Main container to hold both photo and checkout container */
+.main-container {
+    display: flex; /* Align items side by side */
+    justify-content: flex-start; /* Align left */
+    align-items: flex-start; /* Align items to the top */
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px;
+  }
+  
+  /* Photo styling */
+  .photo {
+    flex: 1; /* Allow the photo to take up equal space with the checkout container */
+    max-width: 39.45%; /* You can adjust this as needed */
+    margin-right: 20px; /* Space between photo and container */
+  }
+  
+  .photo img {
+    width: 100%; /* Ensure the image takes up the full width of the photo container */
+    padding: 19px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border-color: #000000;
+  }
+  
+  /* Checkout container styling */
+  .checkout-container {
+    flex: 1; /* Allow the container to take up equal space with the photo */
+    max-width: 50%; /* You can adjust this as needed */
+    padding: 20px;
+    background-color: #fff;
+   
+    border-radius: 8px;
+   
+  }
+  
+
+label {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 5px;
+    color: #071739;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="month"],
+input[type="tel"],
+input[type="password"],
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #071739; /* Dark blue border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: #e9ecef; /* Slightly darker for read-only inputs */
+    color: #071739;
+}
+
+input[optional] {
+    background-color: #e9ecef; /* Slightly darker for read-only inputs */
+    color: #071739;
+}
+
+button {
+    background-color: #071739; /* Dark blue button */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px 5px;
+}
+
+#pp:hover{
+    background-color: #0a244e; /* Slightly darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 0 10px #071739; /* Glowing effect */
+}
+
+
+#visa-fields {
+    margin-top: 20px;
+    
+}
+
+
+
+
+
+/* General Style for the Payment Method Icons */
+#pp{
+    font-size: 2rem; /* Larger size for better visibility */
+    color: #071739; /* Dark blue color for the icons */
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 15px;
+    transition: all 0.4s ease;
+    text-transform: capitalize; /* Capitalize text next to the icon */
+    border: 2px solid #071739; /* Dark blue border around the icon */
+}
+
+.photo-resize {
+height: 1045px;
+
+}
+/* Hover effect when user interacts with the icons */
+#pp:hover {
+    background-color: #071739; /* Dark blue background on hover */
+    color: #ffffff; /* White icon and text color */
+  
+}
+
+
+/* Checkout */
+.payments .details {
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    padding: 0px;
+    gap: 5px;
+  }
+  
+  
+  
+  .payments .details span:nth-child(even) {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin: auto 0 auto auto;
+  }
+  
+  .checkout .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 10px 20px;
+    background-color: #4B6382;
+  }
+  
+  .price {
+    position: relative;
+    font-size: 22px;
+    color: #2B2B2F;
+    font-weight: 900;
+  }
+  
+.checkout-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 39px;
+    
+    box-shadow: 0px 0.5px 0.5px #4B6382, 0px 1px 0.5px #4B6382;
+    
+   
+    border: 1px solid #4B6382;
+    border-radius: 30px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  }
+  
+  .checkout-btn:hover {
+    background-color: white; /* Dark blue background on hover */
+    color: #071739; /* White icon and text color */
+    transform: scale(1.15); /* Slight zoom */
+  
+}
